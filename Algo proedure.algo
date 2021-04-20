@@ -1,0 +1,46 @@
+PROCEDURE dot-Product(VAR V1,V2:ARRAY_OF FLOAT )
+VAR
+    Ps :=0;
+    i  : INTEGER;
+BEGIN
+        FOR i FROM 0 TO V1.length-1 STEP 1  DO
+            Ps:=Ps +V1[i]*V2[i]
+        END_FOR
+END
+ALGORITHM Produit-scalar
+VAR
+    n: INTEGER;
+BEGIN
+        FOR i FROM 0 TO n STEP 1  DO
+            FOR i FROM 0 TO n-1 STEP 1  DO
+                dot-Product(Ps,V1,V2)
+            END_FOR
+                IF (Ps=0) THEN
+                    write("V1 and V2 are orthogonal")
+                END_IF
+            END_FOR
+//function
+FUNCTION Dot-scalaire(VAR V1,V2:ARRAY_OF FLOAT) : FLOAT
+VAR
+    n: INTEGER;
+    V1,V2: ARRAY_OF FLOAT;
+BEGIN
+    Ps=0;
+        FOR i FROM 0 TO v1.length-1 STEP 1  DO
+            Ps=Ps+v1[i]*v2[i];
+        END_FOR
+    RETURN Ps ;
+END
+ALGORITHM 
+VAR
+    n: INTEGER;
+BEGIN
+    FOR i FROM 0 TO n STEP 1  DO
+            FOR i FROM 0 TO n-1 STEP 1  DO
+                Ps:=Dot-scalaire(V1,V2);
+            END_FOR
+        IF (ps=0) THEN
+            write("v1 and v2 are orthogonal")
+        END_IF
+    END_FOR
+END
